@@ -7,6 +7,7 @@ import UpdateProductController from '../controllers/UpdateProductController';
 import GetProductsByCategoryController from '../controllers/GetProductsByCategoryController';
 import GetAllProductsController from '../controllers/GetAllProductsController';
 import DeleteProductController from '../controllers/DeleteProductController';
+import GetProductController from '../controllers/GetProductController';
 
 const productRoutes = Router();
 const updateProductController = new UpdateProductController();
@@ -14,6 +15,7 @@ const createProductController = new CreateProductController();
 const getProductsByCategoryController = new GetProductsByCategoryController();
 const getAllProductsController = new GetAllProductsController();
 const deleteProductController = new DeleteProductController();
+const getProductController = new GetProductController();
 
 productRoutes.post(
   '/products',
@@ -45,6 +47,12 @@ productRoutes.delete(
   '/products/:id',
   isAuthenticated,
   deleteProductController.handle.bind(deleteProductController)
+);
+
+productRoutes.get(
+  '/products/:id',
+  isAuthenticated,
+  getProductController.handle.bind(getProductController)
 );
 
 export default productRoutes;
