@@ -45,6 +45,7 @@ model Product {
   id         Int      @id @default(autoincrement())
   name       String
   price      Decimal  @db.Decimal(10, 2)
+  image      String?
 
   categoryId Int
   category   Category @relation(fields: [categoryId], references: [id])
