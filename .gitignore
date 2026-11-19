@@ -1,11 +1,3 @@
-node_modules
-# Keep environment variables out of version control
-.env
-
-/generated/prisma
-
-
-
 # Dependências
 node_modules/
 
@@ -15,9 +7,17 @@ node_modules/
 !.env.example
 
 # Arquivos gerados
+/generated/prisma
 dist/
 coverage/
 
 # Logs
 *.log
 
+# Banco SQLite de teste
+*.db
+*.db-journal
+
+# Imagens enviadas nos testes
+uploads/*
+!uploads/.gitkeep
