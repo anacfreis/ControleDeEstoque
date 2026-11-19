@@ -22,6 +22,7 @@ class CreateCategoryController {
 
       res.status(201).json(category);
     } catch (error) {
+      console.error('[CreateCategoryController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao criar categoria.' });
     }
   }

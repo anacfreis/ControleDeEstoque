@@ -22,6 +22,7 @@ class CreateUserController {
         return;
       }
 
+      console.error('[CreateUserController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao criar usuário.' });
     }
   }

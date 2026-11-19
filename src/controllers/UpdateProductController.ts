@@ -40,6 +40,7 @@ class UpdateProductController {
         }
       }
 
+      console.error('[UpdateProductController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao atualizar produto.' });
     }
   }

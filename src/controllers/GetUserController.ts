@@ -20,6 +20,7 @@ class GetUserController {
         return;
       }
 
+      console.error('[GetUserController.ts]', error);
       res.status(500).json({
         error: 'Erro interno ao buscar usuário.',
       });

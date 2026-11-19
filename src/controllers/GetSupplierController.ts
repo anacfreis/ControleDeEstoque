@@ -25,6 +25,7 @@ class GetSupplierController {
         return res.status(404).json({ error: error.message });
       }
 
+      console.error('[GetSupplierController.ts]', error);
       return res.status(500).json({ error: 'Erro ao buscar fornecedor!' });
     }
   }

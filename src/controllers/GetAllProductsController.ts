@@ -20,6 +20,7 @@ class GetAllProductsController {
 
       res.status(200).json(products);
     } catch (error) {
+      console.error('[GetAllProductsController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao buscar produtos.' });
     }
   }

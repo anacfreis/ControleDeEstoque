@@ -31,6 +31,7 @@ class DeleteSupplierController {
         }
       }
 
+      console.error('[DeleteSupplierController.ts]', error);
       return res.status(500).json({ error: 'Erro ao excluir fornecedor!' });
     }
   }

@@ -24,6 +24,7 @@ class AuthUserController {
         return;
       }
 
+      console.error('[AuthUserController.ts]', error);
       res.status(500).json({
         error: 'Erro interno ao autenticar usuário.',
       });

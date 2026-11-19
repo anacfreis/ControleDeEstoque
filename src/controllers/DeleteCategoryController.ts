@@ -34,6 +34,7 @@ class DeleteCategoryController {
         }
       }
 
+      console.error('[DeleteCategoryController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao excluir categoria.' });
     }
   }

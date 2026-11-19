@@ -21,6 +21,7 @@ class DeleteUserController {
         return;
       }
 
+      console.error('[DeleteUserController.ts]', error);
       res.status(500).json({
         error: 'Erro interno ao deletar usuário.',
       });

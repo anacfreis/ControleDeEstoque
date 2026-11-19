@@ -23,6 +23,7 @@ class CreateSupplierController {
 
       return res.status(201).json(supplier);
     } catch (error) {
+      console.error('[CreateSupplierController.ts]', error);
       return res.status(500).json({ error: 'Erro ao cadastrar fornecedor!' });
     }
   }

@@ -27,6 +27,7 @@ class GetProductsByCategoryController {
         return;
       }
 
+      console.error('[GetProductsByCategoryController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao buscar produtos.' });
     }
   }

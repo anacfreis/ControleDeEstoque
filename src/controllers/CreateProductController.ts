@@ -37,6 +37,7 @@ class CreateProductController {
         }
       }
 
+      console.error('[CreateProductController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao criar produto.' });
     }
   }

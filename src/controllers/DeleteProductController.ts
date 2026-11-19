@@ -27,6 +27,7 @@ class DeleteProductController {
         return;
       }
 
+      console.error('[DeleteProductController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao excluir produto.' });
     }
   }

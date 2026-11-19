@@ -27,6 +27,7 @@ class GetCategoryController {
         return;
       }
 
+      console.error('[GetCategoryController.ts]', error);
       res.status(500).json({ error: 'Erro interno ao buscar categoria.' });
     }
   }
