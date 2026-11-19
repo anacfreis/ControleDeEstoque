@@ -1,6 +1,6 @@
-
 import { Request, Response } from 'express';
 import CreateProductService from '../services/product/CreateProductService';
+import { removeUpload } from '../utils/removeUpload';
 
 class CreateProductController {
   async handle(req: Request, res: Response): Promise<void> {
@@ -27,6 +27,8 @@ class CreateProductController {
 
       res.status(201).json(product);
     } catch (error) {
+      await removeUpload(image); // criação falhou: apaga a imagem que acabou de subir
+
       if (error instanceof Error) {
         if (
           error.message === 'Categoria não encontrada!' ||

@@ -1,5 +1,5 @@
-
 import prisma from '../../config/prisma';
+import { removeUpload } from '../../utils/removeUpload';
 
 interface UpdateProductProps {
   id: number;
@@ -66,6 +66,11 @@ class UpdateProductService {
         ...(image && { image }),
       },
     });
+
+    // trocou a imagem: apaga a antiga do disco
+    if (image && product.image) {
+      await removeUpload(product.image);
+    }
 
     return updatedProduct;
   }

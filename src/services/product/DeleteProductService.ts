@@ -1,5 +1,5 @@
-
 import prisma from '../../config/prisma';
+import { removeUpload } from '../../utils/removeUpload';
 
 interface DeleteProductProps {
   id: number;
@@ -24,6 +24,9 @@ class DeleteProductService {
         id,
       },
     });
+
+    // produto excluído: apaga a imagem dele do disco
+    await removeUpload(product.image);
 
     return { message: 'Produto excluído com sucesso!' };
   }

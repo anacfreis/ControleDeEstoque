@@ -1,6 +1,6 @@
-
 import { Request, Response } from 'express';
 import UpdateProductService from '../services/product/UpdateProductService';
+import { removeUpload } from '../utils/removeUpload';
 
 class UpdateProductController {
   async handle(req: Request, res: Response): Promise<void> {
@@ -29,6 +29,8 @@ class UpdateProductController {
 
       res.status(200).json(product);
     } catch (error) {
+      await removeUpload(image); // atualização falhou: apaga a imagem nova
+
       if (error instanceof Error) {
         if (
           error.message === 'Produto não encontrado!' ||
